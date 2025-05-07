@@ -310,7 +310,6 @@ ul li {
     }
 	.ProjectImg {
 		display: flex;
-		content-align: center;
 		justify-content: center;
 	}
 	
