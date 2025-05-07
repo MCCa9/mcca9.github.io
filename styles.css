@@ -142,6 +142,17 @@ footer {
     border-radius: 50%;
 }
 
+.bioicon img {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+	margin: auto;
+    height: 340px;
+    width: 340px;
+    background-color: chartreuse;
+    border-radius: 50%;
+}
+
 .decorative {
 	margin: auto;
     padding: 0;
