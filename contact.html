@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Contact</title>
+</head>
+<header>   
+    <h1><a href="index.html">Michael Carlson</a></h1>
+    <button class="menu-button" id="openMenu">&#9776;</button>
+</header>
+<div class="overlay-menu" id="overlayMenu">
+    <button class="close-button" id="closeMenu">&times;</button>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Works</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</div>
+<main>
+    <section class="decorative" style="position: relative;height: 35px;"><img src="img/TopBar.svg" alt="" style="position: absolute;top: -1px;"></section>
+    <br>
+	<img src="img/Spacer.svg" alt="">
+    <h1 class="ProjectHeader">Contact</h1>
+    <form action="#" class="contactforms">
+        <input type="text" id="fname" value="Your Name">
+        <input type="email" id="Email" value="Your Email">
+        <input type="text" id="inquiry" value="Your Inquiry" style="padding-bottom:100px;">
+        <input type="submit" id="submit" value="Submit">
+    </form>
+    <section class="socialbuttons">
+        <ul>
+            <li><a href="mailto:exampleemail@example" target="_blank">Email</a></li>
+            <li><a href="tel:+000000" target="_blank">Phone</a></li>
+            <li><a href="https://bsky.app/" target="_blank">Bluesky</a></li>
+            <li><a href="https://youtube.com/" target="_blank">YouTube</a></li>
+            <li><a href="https://tumblr.com/"target="_blank">Tumblr</a></li>
+        </ul>
+    </section>
+    <br>
+	<img src="img/Spacer.svg" alt="">
+    <section class="decorative" style="position: relative;height: 35px;"><img src="img/BottomBar.svg" alt="" style="position: absolute;bottom: 0px;"></section>
+</main>
+<script>
+    const openMenu = document.getElementById('openMenu');
+    const closeMenu = document.getElementById('closeMenu');
+    const overlayMenu = document.getElementById('overlayMenu');
+  
+    // 🟢 Show overlay menu
+    openMenu.addEventListener('click', () => {
+      overlayMenu.classList.add('active');
+    });
+  
+    // 🔴 Hide overlay menu
+    closeMenu.addEventListener('click', () => {
+      overlayMenu.classList.remove('active');
+    });
+  
+    // ⌨️ Close with ESC
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        overlayMenu.classList.remove('active');
+      }
+    });
+  </script>
+<footer>
+    <p>&copy; Michael Carlson</p>
+</footer>

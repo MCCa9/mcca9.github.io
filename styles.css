@@ -1,0 +1,348 @@
+*{
+    box-sizing: border-box;
+}
+
+:root {
+
+    --general-padding: 5%;
+    --button-padding: 4%;
+}
+
+body{
+    background-color: darkorchid;
+    margin: 0;
+    font-family: sans-serif;
+}
+header {
+    background-color: chartreuse;
+    padding: var(--general-padding);
+    font-size: 120%;
+    filter: drop-shadow(100%);
+    position: sticky;
+}
+
+
+/*main {
+    margin-top: 150px;
+    margin-top: 150px;
+}*/
+
+footer {
+    background-color: chartreuse;
+    padding: var(--general-padding); 
+    text-align: right;
+}
+
+/*footer p {
+    margin-top: 20%;
+}
+*/
+
+
+.gallery {
+    display: flex;
+    font-size: 24px;
+    overflow: auto;
+    white-space: nowrap;
+    padding: var(--general-padding);
+    
+}
+
+
+.gallery img {
+    width: auto;
+    height: 100vw;
+}
+
+
+.gallery video {
+    width: auto;
+    height: 100vw;
+}
+
+*/
+
+.bio {
+    color: white;
+    font-size: 24px;
+    max-width: 800px;
+}
+
+.bionu {
+	display: flex;
+    text-align: center;
+    color: white;
+    font-size: 24px;
+}
+
+.projecthead {
+    color: white;
+    font-size: 48px;
+    width: max-content;
+}
+
+
+#project-details {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--general-padding);
+	color: white;
+	font-size: 24px;
+}
+
+.buttons{
+    /*margin-top: 50px;*/
+    background-color: chartreuse;
+    font-size: larger;
+    text-align: center;
+    padding: var(--button-padding);
+}
+.navbuttons {
+    background-color: forestgreen;
+    display: inline-block;
+    text-align: center;
+    font-size: 90px;
+    padding: 16px 32px;
+    border-radius: 10%;
+}
+
+.navbuttons a {
+    color: black;
+    text-decoration: none;
+}
+
+.navbuttons {
+    font-size: 5rem;
+}
+
+.navbuttons:hover {
+    background-color: rgb(52, 221, 52);
+}
+
+.navbuttons:active {
+    background-color: rgb(171, 1, 1);
+}
+
+.bioicon {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+	margin: auto;
+    height: 340px;
+    width: 340px;
+    background-color: chartreuse;
+    border-radius: 50%;
+}
+
+.decorative {
+	margin: auto;
+    padding: 0;
+}
+
+h1 a {
+    color: black;
+    text-decoration: none;
+}
+
+.ProjectHeader {
+    color: white;
+    font-size: 64px;
+}
+
+.ProjectHeader div {
+    background-color: crimson;
+}
+
+.ProjectImg {
+    padding: var(--general-padding);
+}
+
+.ProjectImg img{
+    width: 100%;
+    height: auto;
+
+}
+
+.ProjectImg video{
+    width: 100%;
+    height: auto;
+
+}
+
+
+.contactforms {
+    display: flex;
+    align-content: center;
+	justify-content: center;
+	margin: auto;
+    flex-direction: column;
+	max-width: 500px;
+}
+
+#submit {
+	max-width:100px;
+	display: flex;
+	padding: var(--button-padding);
+    align-content: center;
+}
+
+
+.socialbuttons {
+    display: flex;
+    flex-direction: column;
+}
+
+ul li a{
+    color: white;
+    font-size: 4rem;
+    cursor: pointer;
+}
+
+ul li a:hover{
+    color: crimson;
+}
+
+ul li a:active{
+    color: crimson;
+}
+
+ul li {
+    color: white;
+    font-size: 2rem;
+    line-height: 400%;
+}
+
+/* 🍔 Hamburger button */
+.menu-button {
+    position: absolute;
+    top: 29px;
+    right: 20px;
+    z-index: 3;
+    font-size: 3rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* 🧊 Fullscreen overlay */
+  .overlay-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: chartreuse;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+    z-index: 1000;
+
+  }
+
+  .overlay-menu.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .overlay-menu nav a {
+    color: black;
+    font-size: 3rem;
+    text-decoration: none;
+    margin: 20px 0;
+    transition: color 0.3s ease;
+  }
+
+  .overlay-menu nav a:hover {
+    color: crimson;
+  }
+
+  .close-button {
+    position: absolute;
+    top: 29px;
+    right: 30px;
+    font-size: 3rem;
+    background: none;
+    border: none;
+    color: black;
+    cursor: pointer;
+  }
+
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+    .ProjectImg img {
+        max-width: 500px;
+    }
+	
+		video {
+        max-width: 500px;		
+	}
+	
+	.gallery img {
+		max-width: 500px;
+	}
+}
+
+/* Large devices (laptops/desktops, 800px and up) */
+@media only screen and (min-width: 800px) {
+	.ProjectImg img {
+        width: auto;
+		height: 100%;
+    }
+	.ProjectImg {
+		display: flex;
+		content-align: center;
+		justify-content: center;
+	}
+	
+	.gallery img {
+		max-width: 750px;
+	}
+
+	video{
+		max-width: 750px;
+	}
+}
+
+/* Large devices (laptops/desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+	.ProjectImg img {
+        width: auto;
+		height: auto;
+    }
+	
+	.gallery {
+    padding: var(--general-padding);
+	display: flex;
+    font-size: 24px;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+.gallery img{
+     width: auto;
+    height: auto;
+
+}
+
+.gallery video{
+    width: auto;
+    height: auto;
+
+}
+}
