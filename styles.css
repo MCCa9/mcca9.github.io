@@ -21,6 +21,10 @@ header {
     position: sticky;
 }
 
+label {
+    color: white;
+}
+
 
 /*main {
     margin-top: 150px;
