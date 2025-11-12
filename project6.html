@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://use.typekit.net/ynz0owh.css">
+    <title>Ska Snacks Box</title>
+</head>
+<header>   
+    <h1><a href="index.html">Michael Carlson</a></h1>
+    <button class="menu-button" id="openMenu">&#9776;</button>
+</header>
+<div class="overlay-menu" id="overlayMenu">
+    <button class="close-button" id="closeMenu">&times;</button>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</div>
+<main>
+    <section class="decorative" style="position: relative;height: 35px;"><img src="img/TopBar.svg" alt="" style="position: absolute;top: -1px;"></section>
+    <br>
+	<img src="img/Spacer.svg" alt="">
+
+    <div class="ProjectImg"><a href="project6.html"><img src="img/Project6.jpg" alt=""></div></a>
+    
+    <section id="project-details">
+
+      <h1 class="projecthead">Ska Snacks Box</h1>
+    </section>
+    <br>
+	<img src="img/Spacer.svg" alt="">
+    <section class="decorative" style="position: relative;height: 35px;"><img src="img/BottomBar.svg" alt="" style="position: absolute;bottom: 0px;"></section>
+</main>
+<script>
+    const openMenu = document.getElementById('openMenu');
+    const closeMenu = document.getElementById('closeMenu');
+    const overlayMenu = document.getElementById('overlayMenu');
+  
+    // 🟢 Show overlay menu
+    openMenu.addEventListener('click', () => {
+      overlayMenu.classList.add('active');
+    });
+  
+    // 🔴 Hide overlay menu
+    closeMenu.addEventListener('click', () => {
+      overlayMenu.classList.remove('active');
+    });
+  
+    // ⌨️ Close with ESC
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        overlayMenu.classList.remove('active');
+      }
+    });
+  </script>
+<footer>
+    <p>&copy; Michael Carlson</p>
+</footer>
