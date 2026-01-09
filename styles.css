@@ -4,7 +4,7 @@
 
 :root {
 
-    --general-padding: 5%;
+    --general-padding: 2%;
     --button-padding: 4%;
 }
 
@@ -51,6 +51,7 @@ footer {
     overflow: auto;
     white-space: nowrap;
     padding: var(--general-padding);
+    text-align: center;
     
 }
 
@@ -58,6 +59,7 @@ footer {
 .gallery img {
     width: auto;
     height: 100vw;
+
 }
 
 
@@ -174,6 +176,7 @@ h1 a {
 
 .ProjectImg {
     padding: var(--general-padding);
+    justify-content: center;
 }
 
 .ProjectImg img{
@@ -185,8 +188,8 @@ h1 a {
 .ProjectImg video{
     width: 100%;
     height: auto;
-
-}*
+    padding: var(--general-padding);
+}
 
 
 .contactforms {
@@ -297,22 +300,58 @@ ul li {
     cursor: pointer;
   }
 
+.ToC ul li a{
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.ToC ul li a:hover {
+    color: crimson;
+}
+
+.ToC ul li a:active{
+    color: crimson;
+}
+
+.ToC ul li {
+    color: white;
+    font-size: 2rem;
+    line-height: 100%;
+}
+
+.ToC b {
+     color: white;
+    font-size: 48px;
+    width: max-content;
+}
 
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
 
     .ProjectImg img {
-        max-width: 500px;
+        max-width: 1000px;
     }
 	
-		video {
-        max-width: 500px;		
+	.ProjectImg video {
+        max-width: 1000px;		
 	}
 	
 	.gallery img {
 		max-width: 500px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
 	}
+
+    .gallery video {
+		max-width: 500px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+	}
+    
 }
 
 /* Large devices (laptops/desktops, 800px and up) */
@@ -323,7 +362,7 @@ ul li {
     }
 	.ProjectImg {
 		display: flex;
-		justify-content: center;
+		
 	}
 	
 	.gallery img {
@@ -331,7 +370,7 @@ ul li {
 	}
 
 	video{
-		max-width: 750px;
+		max-width: 1750px;
 	}
 }
 
@@ -361,4 +400,4 @@ ul li {
     height: auto;
 
 }
-}
+} 
