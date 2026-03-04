@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+</head>
+<body>
+    <a-scene background="color: #FAFAFA">
+        <a-assets>
+            <img id="brick_diff" src="../assets/brick/whitewashed_brick_diff_1k.png" alt="">
+            <img id="brick_rough" src="../assets/brick/whitewashed_brick_rough_1k.png" alt="">
+            <img id="brick_normal" src="../assets/brick/whitewashed_brick_nor_gl_1k.png" alt="">
+            <img id="brick_ao" src="../assets/brick/whitewashed_brick_ao_1k.png" alt="">
+            <img id="moon_rough" src="../assets/moon/moon_01_rough_1k.png" alt="">
+            <img id="moon_diff" src="../assets/moon/moon_01_diff_1k.png" alt="">
+            <img id="moon_normal" src="../assets/moon/moon_01_nor_gl_1k.png" alt="">
+            <img id="moon_ao" src="../assets/moon/moon_01_ao_1k.png" alt="">
+        </a-assets>
+        <a-sphere position="3 1.25 -5" radius="1.25"  material="color:#fff; roughness: 0; metalness:1; src: #moon_diff; roughnessMap:#moon_rough; normalMap:#moon_normal; ambientOcclusionMap:#moon_ao;"></a-sphere>
+        <a-sphere position="0 1.25 -5" radius="1.25" material="color:#fff; roughness: 0.5; metalness:0.5; src: #moon_diff; roughnessMap:#moon_rough; normalMap:#moon_normal; ambientOcclusionMap:#moon_ao;" shadow></a-sphere>
+        <a-sphere position="-3 1.25 -5" radius="1.25" material="color:#fff; roughness: 1; metalness:0; src: #moon_diff; roughnessMap:#moon_rough; normalMap:#moon_normal; ambientOcclusionMap:#moon_ao;" shadow></a-sphere>
+        <a-plane position="0 0 -4" rotation="-90 0 0" width="12" height="12" color="#7BC8A4" shadow></a-plane>
+
+        <a-entity position="14">
+        <a-sphere position="3 1.25 -5" radius="1.25"  material="color:crimson; roughness: 0; metalness:1;"></a-sphere>
+        <a-sphere position="0 1.25 -5" radius="1.25" material="color:crimson; roughness: 0.5; metalness:0.5;" shadow></a-sphere>
+        <a-sphere position="-3 1.25 -5" radius="1.25" material="color:crimson; roughness: 1; metalness:0;" shadow></a-sphere>
+        <a-plane position="0 0 -4" rotation="-90 0 0" width="12" height="12" color="#7BC8A4" shadow></a-plane>
+        </a-entity>
+
+        <a-entity position="-14">
+        <a-sphere position="3 1.25 -5" radius="1.25"  material="color:#fff; roughness: 0; metalness:1; src: #brick_diff; roughnessMap:#brick_rough; normalMap:#brick_normal; ambientOcclusionMap:#brick_ao;"></a-sphere>
+        <a-sphere position="0 1.25 -5" radius="1.25" material="color:#fff; roughness: 0.5; metalness:0.5; src: #brick_diff; roughnessMap:#brick_rough; normalMap:#brick_normal; ambientOcclusionMap:#brick_ao;" shadow></a-sphere>
+        <a-sphere position="-3 1.25 -5" radius="1.25" material="color:#fff; roughness: 1; metalness:0; src: #brick_diff; roughnessMap:#brick_rough; normalMap:#brick_normal; ambientOcclusionMap:#brick_ao;" shadow></a-sphere>
+        <a-plane position="0 0 -4" rotation="-90 0 0" width="12" height="12" color="#7BC8A4" shadow></a-plane>
+        </a-entity>
+
+        <a-entity light="intensity:0.5; type:ambient;"></a-entity>
+        <a-entity light="intensity:7; type:point" position="1.5 1.7 -2.5"></a-entity>
+    </a-scene>
+</body>
+</html>
