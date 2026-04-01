@@ -8,10 +8,27 @@
        <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-physics-system@v4.2.4/dist/aframe-physics-system.min.js"></script>
 </head>
 <body>
-    <a-scene>
-        <a-sphere id="ball01" position="-2 4 -5" radius="0.5" color="#fff" static-body></a-sphere>
-        <a-sphere id="ball02" position="0 6 -5" radius="0.5" color="#fff" dynamic-body spring="target: #ball01; stiffness: 300; damping: 10; restLength: 1"></a-sphere>
-        <a-sphere id="ball03" position="1 6 -5" radius="0.5" color="#fff" dynamic-body spring="target: #ball02; stiffness: 300; damping: 10; restLength: 1"></a-sphere>
+    <a-scene physics="debug: true">
+
+        <a-sphere position="-1.45446 5.85602 2.36937" radius="1.25" color="#fff" dynamic-body="sphereRadius: NaN" velocity=""></a-sphere>
+        
+        <a-box position="-1.42438 0.63918 -3.2796" static-body="sphereRadius: NaN" geometry="depth: 14.64; height: 0.14; width: 2.29" velocity="" rotation="-10.875311909378159 0 0"></a-box>
+
+        <a-entity geometry="primitive: cylinder; height: 3.09; radius: 0.43" position="-1.24094 1.42623 -16.17106" dynamic-body="shape: cylinder; mass: 0.5;"></a-entity>
+
+        <a-entity geometry="primitive: cylinder; height: 3.09; radius: 0.43" position="-0.44117 1.59755 -18.02157" dynamic-body="mass: 0.5; shape: cylinder; sphereRadius: NaN" velocity=""></a-entity>
+
+        <a-entity geometry="primitive: cylinder; height: 3.09; radius: 0.43" position="-2.27515 1.59755 -18.02157" dynamic-body="mass: 0.5; shape: cylinder; sphereRadius: NaN" velocity=""></a-entity>
+
+        <a-entity geometry="primitive: cylinder; height: 3.09; radius: 0.43" position="0.50527 1.59755 -19.79767" dynamic-body="mass: 0.5; shape: cylinder; sphereRadius: NaN" velocity=""></a-entity>
+
+        <a-entity geometry="primitive: cylinder; height: 3.09; radius: 0.43" position="-1.49129 1.59755 -19.79767" dynamic-body="mass: 0.5; shape: cylinder; sphereRadius: NaN" velocity=""></a-entity>
+
+        <a-entity geometry="primitive: cylinder; height: 3.09; radius: 0.43" position="-3.10392 1.59755 -19.79767" dynamic-body="mass: 0.5; shape: cylinder; sphereRadius: NaN" velocity=""></a-entity>
+
+        <a-box position="0 0 -4" rotation="-90 0 0" width="40" height="40" depth="0.1" color="#7BC8A4" static-body="shape: box;"></a-box>
+
+        <a-sky color="#222"></a-sky>
     </a-scene>
 </body>
 </html>
