@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-extras@7.0.0/dist/aframe-extras.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aframe-blink-controls/dist/aframe-blink-controls.min.js"></script>
+
+</head>
+<body>
+    <a-scene background="color: #FAFAFA">
+       <a-assets>
+        <a-mixin id="wall" geometry="primitive:box; width: 15; height: 10; depth: 0.3;"></a-mixin>
+        <a-mixin id="floor" geometry="primitive: box; width:35; height: 0.2; depth: 20;" class="floor"></a-mixin>.    
+        <a-mixin id="pillar"></a-mixin>
+        <a-mixin id="primary" material="color: white;"></a-mixin>
+        <a-mixin id="secondary" material="color: black;"></a-mixin>
+        <a-mixin id="tertiary" material="color: gray;"></a-mixin>
+    </a-assets>
+    <a-entity id="player" position="0 1.6 0">
+            <!-- camera -->
+            <a-entity id="camera" camera wasd-controls look-controls></a-entity>
+            <!-- hand controls -->
+            <a-entity id="left-hand" raycaster="objects: .floor" oculus-touch-controls="hand: left" blink-controls></a-entity>
+            <a-entity id="right-hand" raycaster="objects: .floor" oculus-touch-controls="hand: right" blink-controls></a-entity>
+    </a-entity>
+    <a-entity mixin="wall primary" position="-0.055 5 10.15" geometry="width: 20.5;" ></a-entity>
+    <a-entity mixin="wall primary" position="2.5 5 -10.15"  ></a-entity>
+    <a-entity mixin="wall primary" position="-9 5 2.15" geometry="width: 16;" rotation="0 90 0 "></a-entity>
+    <a-entity mixin="wall primary" geometry="height: 2.5; width: 6" position="-6.93355 1.1 -7.89157" rotation="0 47.41856008282207 0"></a-entity>
+    <a-entity mixin="wall primary" position="10.04429 5 -0.10186" geometry="width: 20.5" rotation="0 90 0"></a-entity>
+    <a-entity mixin="floor tertiary" position="0 0 0"></a-entity>    
+    <a-sky color="#66cff"></a-sky>
+    </a-scene>
+</body>
+</html>
