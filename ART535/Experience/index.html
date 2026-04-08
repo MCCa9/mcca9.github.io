@@ -12,12 +12,16 @@
 <body>
     <a-scene background="color: #FAFAFA">
        <a-assets>
-        <a-mixin id="wall" geometry="primitive:box; width: 15; height: 10; depth: 0.3;"></a-mixin>
+        <a-mixin id="wall" geometry="primitive:box; width: 15; height: 6; depth: 0.3;"></a-mixin>
         <a-mixin id="floor" geometry="primitive: box; width:35; height: 0.2; depth: 20;" class="floor"></a-mixin>.    
         <a-mixin id="pillar"></a-mixin>
         <a-mixin id="primary" material="color: white;"></a-mixin>
         <a-mixin id="secondary" material="color: black;"></a-mixin>
         <a-mixin id="tertiary" material="color: gray;"></a-mixin>
+        <img id="moon_rough" src="../assets/moon/moon_01_rough_1k.png" alt="">
+        <img id="moon_diff" src="../assets/moon/moon_01_diff_1k.png" alt="">
+        <img id="moon_normal" src="../assets/moon/moon_01_nor_gl_1k.png" alt="">
+        <img id="moon_ao" src="../assets/moon/moon_01_ao_1k.png" alt="">
     </a-assets>
     <a-entity id="player" position="0 1.6 0">
             <!-- camera -->
@@ -27,20 +31,23 @@
             <a-entity id="right-hand" raycaster="objects: .floor" oculus-touch-controls="hand: right" blink-controls></a-entity>
     </a-entity>
     <a-sky color="#66cff"></a-sky>
-    <a-entity mixin="wall primary" position="-0.055 5 10.15" geometry="width: 20.5;" ></a-entity>
-    <a-entity mixin="wall primary" position="2.5 5 -10.15"  ></a-entity>
-    <a-entity mixin="wall primary" position="-9 5 2.15" geometry="width: 16;" rotation="0 90 0 "></a-entity>
-    <a-entity mixin="wall primary" geometry="height: 2.5; width: 6" position="-6.93355 1.1 -7.89157" rotation="0 47.41856008282207 0"></a-entity>
-    <a-entity mixin="wall primary" position="10.04429 5 -0.10186" geometry="width: 20.5" rotation="0 90 0"></a-entity>
-    <a-entity mixin="floor tertiary" position="0 0 0"></a-entity>    
-    <a-entity mixin="floor tertiary" geometry="width: 25.08" position="-2.03487 9.9798 0"></a-entity>
+    <a-entity mixin="wall primary" position="-0.055 3 10.15" geometry="width: 20.5;" ></a-entity>
+    <a-entity mixin="wall primary" position="2.5 3 -10.15"  ></a-entity>
+    <a-entity mixin="wall primary" position="-9 3 2.15" geometry="width: 16;" rotation="0 90 0 "></a-entity>
+    <a-entity mixin="floor tertiary" geometry="width: 25.08" position="-2.03487 6 0"></a-entity>
+    <a-entity mixin="floor tertiary" material="roughness: 0.5; metalness:0.5; src: #moon_diff; roughnessMap:#moon_rough; normalMap:#moon_normal; ambientOcclusionMap:#moon_ao;" position="0 0 0"></a-entity>    
     <a-entity mixin="primary" geometry="primitive: cylinder; height: 2; radius: 2" position="2.69747 1.11617 0.20186"></a-entity>
-    <a-entity mixin="floor tertiary" geometry="depth: 4.42; height: 1; width: 6.9" material="color: #cdbf92" position="-8.49937 1.97345 -9.54774" rotation="0 47.419 0"></a-entity>  
     <a-entity mixin="wall primary" position="-13.05307 5 -13.8437" geometry="width: 8.81" rotation="0 47.419 0"></a-entity>
-    <a-entity mixin="floor tertiary" geometry="depth: 4.42; height: 1; width: 6.9" material="color: #27fffd" position="-11.38867 2.00016 -12.22697" rotation="0 47.419 0"></a-entity>
-    <a-entity mixin="wall primary" position="-12.212 5 -8.55134" geometry="width: 8.81" rotation="0 135.2180396508743 0"></a-entity>
-    <a-entity mixin="wall primary" position="-5.85113 5 -15.80101" geometry="width: 8.81" rotation="0 -17.971967159868537 0"></a-entity>
-    <a-entity mixin="wall primary" position="-2.24082 5.63899 -12.69262" geometry="width: 4.74" rotation="0 90 0"></a-entity>
+    <a-light type="point" intensity="5" position="2.80464 5.9 -3.6" color="#ffedd6"></a-light>    <a-entity mixin="wall primary" position="-12.212 5 -8.55134" geometry="width: 8.81" rotation="0 135.2180396508743 0"></a-entity>
+    <a-entity mixin="wall primary" position="-5.85113 3 -15.80101" geometry="width: 8.81" rotation="0 -17.971967159868537 0"></a-entity>
+    <a-entity mixin="wall primary" position="-2.24082 3.63899 -12.69262" geometry="width: 4.74" rotation="0 90 0"></a-entity>
+
+    <!--beach-->
+    <a-entity mixin="wall primary" geometry="height: 2.5; width: 6" position="-6.93355 0.5 -7.89157" rotation="0 47.41856008282207 0"></a-entity>
+    <a-entity mixin="wall primary" position="10.04429 3 -0.10186" geometry="width: 20.5" rotation="0 90 0"></a-entity>
+    <a-entity mixin="floor tertiary" geometry="depth: 4.42; height: 1; width: 6.9" material="color: #27fffd" position="-11.38867 1.5 -12.22697" rotation="0 47.419 0"></a-entity>
+    <a-entity mixin="floor tertiary" geometry="depth: 4.42; height: 1; width: 6.9" material="color:#cdbf92; roughness: 0.5; metalness:0.5; src: #moon_diff; roughnessMap:#moon_rough; normalMap:#moon_normal; ambientOcclusionMap:#moon_ao;" position="-8.49937 1.5 -9.54774" rotation="0 47.419 0"></a-entity>  
+
 
     </a-scene>
 </body>
