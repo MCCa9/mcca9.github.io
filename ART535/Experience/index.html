@@ -24,6 +24,7 @@
         <img id="moon_ao" src="../assets/moon/moon_01_ao_1k.png" alt="">
         <img id="logo" src="../assets/logo1.png" alt="">
         <img id="SkaMan" src="../assets/SkaMan.png" alt="">
+        <a-asset-item id="SkaManModel" src="../assets/Skaman.glb"></a-asset-item>
     </a-assets>
     <a-entity id="player" position="15 1.6 0" rotation="0 90 0">
             <!-- camera -->
@@ -40,9 +41,10 @@
     <a-entity mixin="wall primary" position="10.04429 3 -5.68767" geometry="width: 9" rotation="0 90 0"></a-entity>
     <a-entity mixin="wall primary" position="10.04429 4.63645 0.07578" geometry="height: 2.5; width: 2.6" rotation="0 90 0"></a-entity>
     <a-entity mixin="floor tertiary" geometry="width: 20" position="0.28465 6 0"></a-entity>
-    <a-entity mixin="floor tertiary" geometry="width:20" material="roughness: 0.5; metalness:0.5; src: #moon_diff; roughnessMap:#moon_rough; normalMap:#moon_normal; ambientOcclusionMap:#moon_ao;" position="0 0 0"></a-entity>    
+    <a-entity mixin="floor tertiary" geometry="width:20" material="roughness: 0.66; metalness: 0.5; src: #moon_diff; roughnessMap: #moon_rough; normalMap: #moon_normal; ambientOcclusionMap: #moon_ao; repeat: 20 20; normalTextureRepeat: 20 20; color: #a9a9a9" position="0 0 0"></a-entity>    
     <a-entity mixin="primary" geometry="primitive: cylinder; height: 2; radius: 2" position="2.69747 1.11617 0.20186"></a-entity>
-    <a-image position="2.69747 3.30144 0.20186" material="src: #SkaMan" geometry="height: 2.66; width: 1.65" rotation="0 90 0"></a-image>
+<!--<a-image position="2.69747 3.30144 0.20186" material="src: #SkaMan" geometry="height: 2.66; width: 1.65" rotation="0 90 0"></a-image>-->
+    <a-gltf-model src="#SkaManModel" position="2.69747 3.555 0.20186" rotation="0 50 0" scale="0.03 0.03 0.03"></a-gltf-model>
     <a-light type="point" intensity="5" position="2.80464 2 -3.6" color="#fffefb"></a-light>    
     <a-entity mixin="wall primary" position="-12.212 5 -8.55134" geometry="width: 8.81" rotation="0 135.2180396508743 0"></a-entity>
     <a-light type="point" intensity="5" position="4.45944 2 3.70918" color="#fffefb"></a-light>
