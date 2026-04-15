@@ -29,6 +29,14 @@
         <a-light type="hemisphere" intensity="0.5" position="3 0 -10" color="orange" ground-color="#fff"></a-light>
         <a-entity light="type: probe; envMap: #colorama"></a-entity>
         <a-sky color="#66CCFF"></a-sky>
+        <a-cubemap id="colorama">
+                <a-cubemap-face src="/cubemap2/px.png"/>
+                <a-cubemap-face src="/cubemap2/nx.png"/>
+                <a-cubemap-face src="/cubemap2/py.png"/>
+                <a-cubemap-face src="/cubemap2/ny.png"/>
+                <a-cubemap-face src="/cubemap2/pz.png"/>
+                <a-cubemap-face src="/cubemap2/nz.png"/>
+        </a-cubemap>
         
     </a-scene>
 </body>
