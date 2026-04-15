@@ -22,9 +22,18 @@
         <img id="moon_diff" src="../assets/moon/moon_01_diff_1k.png" alt="">
         <img id="moon_normal" src="../assets/moon/moon_01_nor_gl_1k.png" alt="">
         <img id="moon_ao" src="../assets/moon/moon_01_ao_1k.png" alt="">
+        <!--<img id="garage_floor_rough" src="../assets/garagefloor/garage_floor_rough_4k.png" alt="">
+        <img id="garage_floor_diff" src="../assets/garagefloor/garage_floor_diff_4k.png" alt="">
+        <img id="garage_floor_normal" src="../assets/garagefloor/garage_floor_nor_gl_4k.png" alt="">
+        <img id="garage_floor_ao" src="../assets/garagefloor/garage_floor_ao_4k.png" alt="">-->
+        <img id="aerial_beach_rough" src="../assets/beach/aerial_beach_01_rough_4k.jpg" alt="">
+        <img id="aerial_beach_diff" src="../assets/beach/aerial_beach_01_diff_4k.jpg" alt="">
+        <img id="aerial_beach_normal" src="../assets/beach/aerial_beach_01_nor_gl_4k.jpg" alt="">
+        <img id="aerial_beach_ao" src="../assets/beach/aerial_beach_01_ao_4k.jpg" alt="">
         <img id="logo" src="../assets/logo1.png" alt="">
         <img id="SkaMan" src="../assets/SkaMan.png" alt="">
         <a-asset-item id="SkaManModel" src="../assets/Skaman.glb"></a-asset-item>
+        <img id="Checker1" src="../assets/checkertext.png" alt="">
     </a-assets>
     <a-entity id="player" position="15 1.6 0" rotation="0 90 0">
             <!-- camera -->
@@ -34,36 +43,32 @@
             <a-entity id="right-hand" raycaster="objects: .floor" oculus-touch-controls="hand: right" blink-controls></a-entity>
     </a-entity>
     <a-sky color="#66ccff"></a-sky>
-    <a-entity mixin="wall primary" position="-0.055 3 10.15" geometry="width: 20.5;" ></a-entity>
-    <a-entity mixin="wall primary" position="2.5 3 -10.15"  ></a-entity>
-    <a-entity mixin="wall primary" position="-9 3 2.15" geometry="width: 16;" rotation="0 90 0 "></a-entity>
-    <a-entity mixin="wall primary" position="10.04429 3 5.82717" geometry="width: 9" rotation="0 90 0"></a-entity>
-    <a-entity mixin="wall primary" position="10.04429 3 -5.68767" geometry="width: 9" rotation="0 90 0"></a-entity>
-    <a-entity mixin="wall primary" position="10.04429 4.63645 0.07578" geometry="height: 2.5; width: 2.6" rotation="0 90 0"></a-entity>
+    <a-entity mixin="wall primary" position="-0.055 3 10.15" geometry="width: 20.5" material="offset: 0.15 0; repeat: -3.39 1; src: #Checker1"></a-entity>
+    <a-entity mixin="wall primary" position="2.5 3 -10.15"  material="repeat: -2.9 1; src: #Checker1"></a-entity>
+    <a-entity mixin="wall primary" position="-9 3 2.15" geometry="width: 16" rotation="0 90 0" material="offset: 0.24 0; repeat: -2.82 1; src: #Checker1"></a-entity>
+    <a-entity mixin="wall primary" position="10.04429 3 5.82717" geometry="width: 9" rotation="0 90 0" material="offset: 0.07 0; repeat: -1.43 1; src: #Checker1"></a-entity>
+    <a-entity mixin="wall primary" position="10.04429 3 -5.68767" geometry="width: 9" rotation="0 90 0" material="offset: -0.07 0; repeat: -1.4 1; src: #Checker1"></a-entity>
+    <a-entity mixin="wall primary" position="10.04429 4.63645 0.03251" geometry="height: 2.5; width: 2.6" rotation="0 90 0"></a-entity>
     <a-entity mixin="floor tertiary" geometry="width: 20" position="0.28465 6 0"></a-entity>
-    <a-entity mixin="floor tertiary" geometry="width:20" material="roughness: 0.66; metalness: 0.5; src: #moon_diff; roughnessMap: #moon_rough; normalMap: #moon_normal; ambientOcclusionMap: #moon_ao; repeat: 20 20; normalTextureRepeat: 20 20; color: #a9a9a9" position="0 0 0"></a-entity>    
+    <a-entity mixin="floor tertiary" geometry="width:20" material="roughness: 0.66; metalness: 0.5; src: #moon_diff; roughnessMap: #moon_rough; normalMap: #moon_normal; ambientOcclusionMap: #moon_ao; color: #a9a9a9" position="0 0 0"></a-entity>    
+    <!--<a-entity mixin="floor tertiary" geometry="width:20" material="roughness: 0.66; metalness: 0.5; src: #garage_floor_diff; roughnessMap: #garage_floor_rough; normalMap: #garage_floor_normal; ambientOcclusionMap: #garage_floor_ao; color: #a9a9a9" position="0 0 0"></a-entity>-->
     <a-entity mixin="primary" geometry="primitive: cylinder; height: 2; radius: 2" position="2.69747 1.11617 0.20186"></a-entity>
 <!--<a-image position="2.69747 3.30144 0.20186" material="src: #SkaMan" geometry="height: 2.66; width: 1.65" rotation="0 90 0"></a-image>-->
     <a-gltf-model src="#SkaManModel" position="2.69747 3.555 0.20186" rotation="0 50 0" scale="0.03 0.03 0.03"></a-gltf-model>
     <a-light type="point" intensity="5" position="2.80464 2 -3.6" color="#fffefb"></a-light>    
-    <a-entity mixin="wall primary" position="-12.212 5 -8.55134" geometry="width: 8.81" rotation="0 135.2180396508743 0"></a-entity>
     <a-light type="point" intensity="5" position="4.45944 2 3.70918" color="#fffefb"></a-light>
     <a-light type="spot" intensity="5" position="16.20288 5.9 0.82652" color="#ffedd6" light="decay: 0.85; penumbra: 1; type: spot" rotation="-21.16506095213261 77.13444316948707 4.714296738336414"></a-light>
     <a-light type="point" intensity="5" position="-9.15237 4.30006 -10.16637" color="#fffefb"></a-light>
 
     <!--beach-->
-    <a-entity mixin="wall primary" position="-12.212 5 -8.55134" geometry="height: 7; width: 8.81" rotation="0 135.2180396508743 0"></a-entity>
-    <a-entity mixin="floor tertiary" geometry="width: 8" position="-9.4051 6 -11.08127" scale="1 1 -0.48539" rotation="0 46.18784673888106 0"></a-entity>
-    <a-entity mixin="wall primary" position="-5.85113 5 -15.80101" geometry="width: 8.81; height:7" rotation="0 -17.971967159868537 0"></a-entity>
-    <a-entity mixin="wall primary" position="-13.05307 5 -13.8437" geometry="width: 8.81; height:7" rotation="0 47.419 0"></a-entity>
-    <a-entity mixin="wall primary" position="-2.24082 5 -12.69262" geometry="width: 4.74; height:7" rotation="0 90 0"></a-entity>
-    <a-entity mixin="wall primary" geometry="height: 2.5; width: 6" position="-6.93355 0.5 -7.89157" rotation="0 47.41856008282207 0"></a-entity>
-    <a-entity mixin="floor tertiary" geometry="depth: 4.42; height: 1; width: 6.9" material="color: #27fffd" position="-11.38867 1.267 -12.22697" rotation="0 47.419 0"></a-entity>
-    <a-entity mixin="floor tertiary" geometry="depth: 4.42; height: 1; width: 6.9" material="color:#cdbf92; roughness: 0.5; metalness:0.5; src: #moon_diff; roughnessMap:#moon_rough; normalMap:#moon_normal; ambientOcclusionMap:#moon_ao;" position="-8.49937 1.267 -9.54774" rotation="0 47.419 0"></a-entity>  
-    <a-entity mixin="floor tertiary" geometry="depth: 4.42; height: 1; width: 6.9" material="color: #27fffd" position="-9.32994 1.267 -14.45001" rotation="0 47.419 0"></a-entity>
-    <a-entity mixin="floor tertiary" geometry="depth: 4.42; height: 1; width: 6.9" material="ambientOcclusionMap: #moon_ao; color: #cdbf92; metalness: 0.5; normalMap: #moon_normal; roughnessMap: #moon_rough; src: #moon_diff" position="-5.74568 1.267 -12.57729" rotation="0 47.419 0"></a-entity>
-
-
+    <a-entity mixin="wall primary" position="-12.212 5 -8.55134" geometry="height: 9; width: 8.81" rotation="0 135.2180396508743 0"></a-entity>
+    <a-entity mixin="floor tertiary" geometry="width: 8;" position="-9.4051 6 -11.08127" scale="1 1 -0.48539" rotation="0 46.18784673888106 0"></a-entity>
+    <a-entity mixin="wall primary" position="-5.85113 5 -15.80101" geometry="width: 8.81; height:9" rotation="0 -17.971967159868537 0"></a-entity>
+    <a-entity mixin="wall primary" position="-13.05307 5 -13.8437" material="color:orange;" geometry="width: 8.81; height:9" rotation="0 47.419 0"></a-entity>
+    <a-entity mixin="wall primary" position="-2.24082 5 -12.69262"  geometry="width: 4.74; height:9" rotation="0 90 0"></a-entity>
+    <a-entity mixin="wall primary" geometry="height: 2.5; width: 6" position="-6.93355 0.005 -7.89157" rotation="0 47.41856008282207 0"></a-entity>
+    <a-entity mixin="floor tertiary" geometry="depth: 4.42; height: 1; width: 12.47" material="color: #27fffd" position="-9.9369 0.8 -13.12657" rotation="0 47.419 0"></a-entity>
+    <a-entity mixin="floor tertiary" geometry="depth: 3.46; height: 1; width: 17.52" material="repeat: 4.5 1; ambientOcclusionMap: #aerial_beach_ao; metalnessTextureRepeat: 4.5 1; normalMap: #aerial_beach_normal; normalTextureRepeat: 4.5 1; roughnessMap: #aerial_beach_rough; roughnessTextureRepeat: 4.5 1; src: #aerial_beach_diff" position="-8.546 0.79359 -8.85933" rotation="0 47.419 0"></a-entity>
     <!--Exterior-->
     <a-image position="10.22031 4.47789 0" material="src: #logo" rotation="0 90 0" scale="2.94625 2.23625 0.04779"></a-image>
     <a-entity mixin="floor primary" position="11.5066 0 0" geometry="width: 3; depth: 40"></a-entity>
@@ -71,6 +76,34 @@
     <a-entity mixin="wall primary" position="10.04429 3 -14.52926" geometry="width: 9" rotation="0 90 0"></a-entity>
     <a-entity mixin="wall primary" position="10.04429 3 14.78602" geometry="width: 9" rotation="0 90 0"></a-entity>
 
-    </a-scene>
+    <!--cashregister-->
+    <a-entity geometry="depth: 6.5" position="8.13065 0.58443 5.75022" material="color: white"></a-entity>
+    <a-image src="../assets/SkaMan.png" position="9.87496 2.87469 3.19776" rotation="0 -90 0" scale="2.5 3.6 1"></a-image>
+    <a-image src="../assets/SkaMan.png" position="9.87496 2.87469 8.825" rotation="0 90 0" scale="2.5 3.6 1"></a-image>
+    <a-image src="../assets/SkaMan.png" position="9.80077 3.05237 6.02798" rotation="0 -90 0" scale="3.94 3.08 1" material="src: #logo"></a-image>
+
+    <!--candy dispenser-->
+    
+    <a-entity geometry="primitive: cylinder; height: 7.41; radius: 0.24" position="-3.5 5.02218 9.78552" material=""></a-entity>    
+    <a-entity geometry="primitive: cylinder; height: 7.41; radius: 0.24" position="-4.01 5.02218 9.78552" material=""></a-entity>
+    <a-entity geometry="primitive: cylinder; height: 7.41; radius: 0.24" position="-4.489 5.02218 9.78552" material=""></a-entity>
+    <a-entity geometry="primitive: cylinder; height: 7.41; radius: 0.24" position="-4.96579 5.02218 9.78552" material=""></a-entity>
+    <a-entity geometry="primitive: cylinder; height: 7.41; radius: 0.24" position="-5.5 5.02218 9.78552" material=""></a-entity>
+    <a-entity geometry="primitive: cylinder; height: 7.41; radius: 0.24" position="-5.97968 5.02218 9.78552" material=""></a-entity>
+    <a-entity geometry="primitive: cylinder; height: 7.41; radius: 0.24" position="-6.46705 5.02218 9.78552" material=""></a-entity>
+    <a-entity geometry="primitive: cylinder; height: 7.41; radius: 0.24" position="-6.96 5.02218 9.78552" material=""></a-entity>
+    <a-entity geometry="primitive: cylinder; height: 7.41; radius: 0.24" position="-7.30791 5.02218 9.41247" material=""></a-entity>
+    <a-entity geometry="primitive: cylinder; height: 7.41; radius: 0.24" position="-7.57711 5.02218 8.99018" material=""></a-entity>
+    <a-entity geometry="primitive: cylinder; height: 7.41; radius: 0.24" position="-7.9601 5.02218 8.6222" material=""></a-entity>
+    <a-entity geometry="primitive: cylinder; height: 7.41; radius: 0.24" position="-8.4377 5.02218 8.24698" material=""></a-entity>
+    <a-entity geometry="primitive: cylinder; height: 7.41; radius: 0.24" position="-8.59991 5.02218 7.69921" material=""></a-entity>
+    <a-entity geometry="primitive: cylinder; height: 7.41; radius: 0.24" position="-8.59991 5.02218 7.17716" material=""></a-entity>
+    <a-entity geometry="primitive: cylinder; height: 7.41; radius: 0.24" position="-8.59991 5.02218 6.69652" material=""></a-entity>
+    <a-entity geometry="primitive: cylinder; height: 7.41; radius: 0.24" position="-8.59991 5.02218 6.1993" material=""></a-entity>
+
+    <!--shelving-->
+
+
+</a-scene>
 </body>
 </html>
