@@ -34,6 +34,8 @@
         <img id="SkaMan" src="../assets/SkaMan.png" alt="">
         <a-asset-item id="SkaManModel" src="../assets/Skaman.glb"></a-asset-item>
         <img id="Checker1" src="../assets/checkertext.png" alt="">
+        <a-asset-item id="palm" src="../assets/models/palmtree/scene.gltf"></a-asset-item>
+        <a-asset-item id="shelf" src="../assets/models/bookshelf/Wooden_Bookshelf_vmhndfu_Low.gltf"></a-asset-item>
     </a-assets>
     <a-entity id="player" position="15 1.6 0" rotation="0 90 0">
             <!-- camera -->
@@ -53,7 +55,7 @@
     <a-entity mixin="floor tertiary" geometry="width: 20" position="0.28465 6 0"></a-entity>
     <a-entity mixin="floor tertiary" geometry="width:20" material="roughness: 0.66; metalness: 0.5; src: #moon_diff; roughnessMap: #moon_rough; normalMap: #moon_normal; ambientOcclusionMap: #moon_ao; color: #a9a9a9" position="0 0 0"></a-entity>    
     <!--<a-entity mixin="floor tertiary" geometry="width:20" material="roughness: 0.66; metalness: 0.5; src: #garage_floor_diff; roughnessMap: #garage_floor_rough; normalMap: #garage_floor_normal; ambientOcclusionMap: #garage_floor_ao; color: #a9a9a9" position="0 0 0"></a-entity>-->
-    <a-entity mixin="primary" geometry="primitive: cylinder; height: 2; radius: 2" position="2.69747 1.11617 0.20186"></a-entity>
+    <a-entity mixin="primary" geometry="primitive: cylinder; height: 2; radius: 1.25" position="2.69747 1.11617 0.20186"></a-entity>
 <!--<a-image position="2.69747 3.30144 0.20186" material="src: #SkaMan" geometry="height: 2.66; width: 1.65" rotation="0 90 0"></a-image>-->
     <a-gltf-model src="#SkaManModel" position="2.69747 3.081 0.20186" rotation="0 50 0" scale="0.02 0.02 0.02" gltf-model="../assets/Skaman.glb"></a-gltf-model>
     <a-light type="point" intensity="5" position="2.80464 2 -3.6" color="#fffefb"></a-light>    
@@ -64,12 +66,14 @@
     <!--beach-->
     <a-entity mixin="wall primary" position="-12.212 5 -8.55134" geometry="height: 9; width: 8.81" rotation="0 135.2180396508743 0"></a-entity>
     <a-entity mixin="floor tertiary" geometry="width: 8;" position="-9.4051 6 -11.08127" scale="1 1 -0.48539" rotation="0 46.18784673888106 0"></a-entity>
-    <a-entity mixin="wall primary" position="-5.85113 5 -15.80101" geometry="width: 8.81; height:9" rotation="0 -17.971967159868537 0"></a-entity>
+    <a-entity mixin="wall primary" position="-6.81225 5 -13.30774" geometry="height: 9; width: 8.81" rotation="0 -41.341769707664554 0"></a-entity>
     <a-entity mixin="wall primary" position="-13.05307 5 -13.8437" material="color:orange;" geometry="width: 8.81; height:9" rotation="0 47.419 0"></a-entity>
     <a-entity mixin="wall primary" position="-2.24082 5 -12.69262"  geometry="width: 4.74; height:9" rotation="0 90 0"></a-entity>
     <a-entity mixin="wall primary" geometry="height: 2.5; width: 6" position="-6.93355 0.005 -7.89157" rotation="0 47.41856008282207 0"></a-entity>
     <a-entity mixin="floor tertiary" geometry="depth: 4.42; height: 1; width: 12.47" material="color: #27fffd" position="-9.9369 0.8 -13.12657" rotation="0 47.419 0"></a-entity>
     <a-entity mixin="floor tertiary" geometry="depth: 3.46; height: 1; width: 17.52" material="repeat: 4.5 1; ambientOcclusionMap: #aerial_beach_ao; metalnessTextureRepeat: 4.5 1; normalMap: #aerial_beach_normal; normalTextureRepeat: 4.5 1; roughnessMap: #aerial_beach_rough; roughnessTextureRepeat: 4.5 1; src: #aerial_beach_diff" position="-8.546 0.79359 -8.85933" rotation="0 47.419 0"></a-entity>
+    <a-gltf-model src="#palm" position="-8.53497 0.25297 -9.64947" gltf-model="../assets/models/palmtree/scene.gltf" rotation="0 -38.200242116962244 0" scale="0.5 0.5 0.5"></a-gltf-model>
+
     <!--Exterior-->
     <a-image position="10.22031 4.47789 0" material="src: #logo" rotation="0 90 0" scale="2.94625 2.23625 0.04779"></a-image>
     <a-entity mixin="floor primary" position="11.5066 0 0" geometry="width: 3; depth: 40"></a-entity>
@@ -108,8 +112,11 @@
     <a-entity geometry="width: 6.47" position="-8.34514 0.53896 7.59085" material="" rotation="0 90 0"></a-entity>
     <a-entity geometry="width: 4.97" position="-7.80754 0.53896 8.39097" material="" rotation="0 145 0"></a-entity>
     <!--shelving-->
+    <a-gltf-model src="#shelf" position="3.3766 1.26808 -9.98294" gltf-model="../assets/models/bookshelf/Wooden_Bookshelf_vmhndfu_Low.gltf" scale="12 2 2"></a-gltf-model>
+    <a-gltf-model src="#shelf" position="-6.87283 0.20224 -7.80027" gltf-model="../assets/models/bookshelf/Wooden_Bookshelf_vmhndfu_Low.gltf" scale="4.94 2 2" rotation="0 47.419 0"></a-gltf-model>
 
 
+    </a-entity>
 </a-scene>
 </body>
 </html>
