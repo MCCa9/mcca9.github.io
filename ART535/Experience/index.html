@@ -37,6 +37,15 @@
         <img id="guitar" src="../assets/Guitarra.png" alt="">
         <a-asset-item id="SkaManModel" src="../assets/Skaman.glb"></a-asset-item>
         <img id="Checker1" src="../assets/checkertext.png" alt="">
+        <a-asset-item id="palm" src="../assets/models/palmtree/scene.gltf"></a-asset-item>
+        <a-asset-item id="shelf" src="../assets/models/bookshelf/Wooden_Bookshelf_vmhndfu_Low.gltf"></a-asset-item>
+        <video id="skate" autoplay loop="true" src="../assets/SkasamplerMute.mp4"></video>
+        <img id="history1" src="../assets/history/SkaHistory-01.png"></img>
+        <img id="history2" src="../assets/history/SkaHistory-02.png"></img>
+        <img id="history3" src="../assets/history/SkaHistory-03.png"></img>
+        <img id="history4" src="../assets/history/SkaHistory-04.png"></img>
+        <img id="history5" src="../assets/history/SkaHistory-05.png"></img>
+        <audio id="#skasample" src="../assets/SkaSamplerAudio.mp3" preload="auto"></audio>
     </a-assets>
     <a-entity id="player" position="15 1.6 0" rotation="0 90 0">
             <!-- camera -->
@@ -54,10 +63,10 @@
     <a-entity mixin="wall primary" position="10.04429 3 -5.68767" geometry="width: 9" rotation="0 90 0" material="offset: -0.07 0; repeat: -1.4 1; src: #Checker1"></a-entity>
     <a-entity mixin="wall primary" position="10.04429 4.63645 0.03251" geometry="height: 2.5; width: 2.6" rotation="0 90 0"></a-entity>
     <a-entity mixin="floor tertiary" geometry="width: 20" position="0.28465 6 0"></a-entity>
-    <a-entity mixin="floor tertiary" geometry="width:20" material="roughness: 0.66; metalness: 0.5; src: #moon_diff; roughnessMap: #moon_rough; normalMap: #moon_normal; ambientOcclusionMap: #moon_ao; color: #a9a9a9" position="0 0 0"></a-entity>    
-    <!--<a-entity mixin="floor tertiary" geometry="width:20" material="roughness: 0.66; metalness: 0.5; src: #garage_floor_diff; roughnessMap: #garage_floor_rough; normalMap: #garage_floor_normal; ambientOcclusionMap: #garage_floor_ao; color: #a9a9a9" position="0 0 0"></a-entity>-->
-    <a-entity mixin="primary" geometry="primitive: cylinder; height: 2; radius: 2" position="2.69747 1.11617 0.20186"></a-entity>
-<!--<a-image position="2.69747 3.30144 0.20186" material="src: #SkaMan" geometry="height: 2.66; width: 1.65" rotation="0 90 0"></a-image>-->
+    <!--<a-entity mixin="floor tertiary" geometry="width:20" material="roughness: 0.66; metalness: 0.5; src: #moon_diff; roughnessMap: #moon_rough; normalMap: #moon_normal; ambientOcclusionMap: #moon_ao; color: #a9a9a9" position="0 0 0"></a-entity>-->    
+    <a-entity mixin="floor tertiary" geometry="width:20" material="roughness: 0.66; metalness: 0.5; src: #garage_floor_diff; roughnessMap: #garage_floor_rough; normalMap: #garage_floor_normal; ambientOcclusionMap: #garage_floor_ao; color: #a9a9a9" position="0 0 0"></a-entity>
+    <a-entity mixin="primary" geometry="primitive: cylinder; height: 2; radius: 1.25" position="2.69747 1.11617 0.20186"></a-entity>
+    <!--<a-image position="2.69747 3.30144 0.20186" material="src: #SkaMan" geometry="height: 2.66; width: 1.65" rotation="0 90 0"></a-image>-->
     <a-gltf-model src="#SkaManModel" position="2.69747 3.081 0.20186" rotation="0 50 0" scale="0.02 0.02 0.02" gltf-model="../assets/Skaman.glb"></a-gltf-model>
     <a-light type="point" intensity="5" position="2.80464 2 -3.6" color="#fffefb"></a-light>    
     <a-light type="point" intensity="5" position="4.45944 2 3.70918" color="#fffefb"></a-light>
@@ -111,8 +120,44 @@
     <a-entity geometry="width: 6.47" position="-8.34514 0.53896 7.59085" material="" rotation="0 90 0"></a-entity>
     <a-entity geometry="width: 4.97" position="-7.80754 0.53896 8.39097" material="" rotation="0 145 0"></a-entity>
     <!--shelving-->
+    <a-entity position="2.95611 0.50263 -9.51481" geometry="height: 0.16; width: 12" material="color: white;"></a-entity>
+    <a-entity position="2.95611 1.09013 -9.51481" geometry="height: 0.16; width: 12" material="color: white;"></a-entity>
+    <a-entity position="2.95611 1.65473 -9.51481" geometry="height: 0.16; width: 12" material="color: white"></a-entity>
+    <a-entity position="2.95611 2.23009 -9.51481" geometry="height: 0.16; width: 12" material="color: white;"></a-entity>
 
+    <a-entity position="-6.66474 0.54196 -7.59551" geometry="height: 0.24; width: 8.61" material="color: white" rotation="0 47.419 0"></a-entity>
+    <a-entity position="-6.66474 1.07517 -7.59551" geometry="height: 0.24; width: 8.61" material="color: white" rotation="0 47.419 0"></a-entity>
 
+    <!--<a-gltf-model src="#shelf" position="3.3766 1.26808 -9.98294" gltf-model="../assets/models/bookshelf/Wooden_Bookshelf_vmhndfu_Low.gltf" scale="12 2 2"></a-gltf-model>
+    <a-gltf-model src="#shelf" position="-6.87283 0.20224 -7.80027" gltf-model="../assets/models/bookshelf/Wooden_Bookshelf_vmhndfu_Low.gltf" scale="4.94 2 2" rotation="0 47.419 0"></a-gltf-model>-->
+
+    <a-entity mixin="primary" geometry="primitive: cylinder; height: 0.36; radius: 1.25" position="1.07946 1.79008 0.20186"></a-entity>
+    <a-entity mixin="primary" geometry="primitive: cylinder; height: 0.36; radius: 1.15" position="-0.88963 1.79008 0.20186"></a-entity>
+    <a-entity mixin="primary" geometry="primitive: cylinder; height: 0.36" position="-2.90499 1.79008 0.20186"></a-entity>
+    <a-entity mixin="primary" geometry="height: 2.31; width: 5.75" position="-0.83248 0.80323 0.25672"></a-entity>
+
+    <!--screen-->
+    <a-entity position="-8.77495 3.7624 -0.2623" geometry="depth: 0.677; height: 0.6773; width: 0.677" material="color: black" scale="0 8 12.2"></a-entity>
+    <a-video src="#skate" position="-8.76338 3.43819 -0.27984" rotation="0 90 0" scale="8 4.5 1" material="shader: standard"></a-video>
+    <a-light type="spot" intensity="5" position="-0.54719 5.78654 2.76107" color="#ffedd6" light="angle: 31.21; decay: 0.38; intensity: 3.5; penumbra: 1" rotation="-15.589608647714568 71.0805711061348 -149.40562057390372"></a-light>    
+    <a-sound src="src: url:(../assets/SkaSamplerAudio.mp3)" autoplay="true" position="-8.77495 3.7624 -0.2623"></a-sound>
+
+    <!--Decorations-->
+    <a-image position="8 2.560 9.91126" material="src: #history1; flatShading: true; shader: standard;"  rotation="0 180 0" scale="2 2 0"></a-image>
+    <a-image position="6 2.560 9.91126" material="flatShading: true; shader: standard; src: #history2" rotation="0 180 0" scale="2 2 0"></a-image>
+    <a-image position="4.00163 2.560 9.91126" material="src: #history3; flatShading: true; shader: standard;" rotation="0 180 0" scale="2 2 0"></a-image>
+    <a-image position="2 2.560 9.91126" material="src: #history4; flatShading: true; shader: standard;" rotation="0 180 0" scale="2 2 0"></a-image>
+    <a-image position="0 2.560 9.91126" material="src: #history5; flatShading: true; shader: standard;" rotation="0 180 0" scale="2 2 0"></a-image>
+
+    <a-image position="4.54901 4.74941 -9.98977" material="src: #guitar; flatShading: true; shader: standard;"  rotation="0 180 -5.03" scale="1.34 2.03 0"></a-image>
+    <a-image position="5.7 4.94996 -9.98977" material="src: #note; flatShading: true; shader: standard;" rotation="0 0 -5.03" scale="0.54 0.91 0"></a-image>
+    <a-image position="3.2 4.6 -9.98977" material="src: #note; flatShading: true; shader: standard;" rotation="0 0 -5.03" scale="0.54 0.91 0"></a-image>
+
+    <a-gltf-model src="#SkaManModel" position="-4.79998 1.41636 -9.68948" rotation="0 7.48 0" scale="0.005 0.005 0.005" gltf-model="../assets/Skaman.glb"></a-gltf-model>
+    <a-gltf-model src="#SkaManModel" position="-5.05301 1.41636 -9.50859" rotation="0 7.48 0" scale="0.005 0.005 0.005" gltf-model="../assets/Skaman.glb"></a-gltf-model>
+    <a-gltf-model src="#SkaManModel" position="-5.29907 1.41636 -9.24565" rotation="0 7.48 0" scale="0.005 0.005 0.005" gltf-model="../assets/Skaman.glb"></a-gltf-model>
+    <a-gltf-model src="#SkaManModel" position="-5.29907 1.41636 -9.14565" rotation="0 7.48 0" scale="0.005 0.005 0.005" gltf-model="../assets/Skaman.glb"></a-gltf-model>
+</a-entity>
 </a-scene>
 </body>
 </html>
