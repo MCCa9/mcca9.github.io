@@ -9,8 +9,56 @@
     <script src="https://unpkg.com/aframe-extras@7.0.0/dist/aframe-extras.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aframe-blink-controls/dist/aframe-blink-controls.min.js"></script>
     <!--https://sketchfab.com/3d-models/supermarket-shelving-fb7184bd180c44b2a39ccf0a6451a145-->
+    <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    #startOverlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(179, 27, 27, 0.92);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      text-align: center;
+    }
+
+    #startOverlay h1 {
+      margin-bottom: 12px;
+      font-size: 2rem;
+    }
+
+    #startOverlay p {
+      margin-bottom: 24px;
+      max-width: 500px;
+      padding: 0 20px;
+      line-height: 1.5;
+    }
+
+    #startButton {
+      padding: 14px 24px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    #startOverlay.hidden {
+      display: none;
+    }
+  </style>
 </head>
 <body>
+<div id="startOverlay">
+    <h1>Welcome</h1>
+    <p>Click below to start the experience and enable sound.</p>
+    <button id="startButton">Start Experience</button>
+</div>
     <a-scene background="color: #FAFAFA">
        <a-assets>
         <a-mixin id="wall" geometry="primitive:box; width: 15; height: 6; depth: 0.3;"></a-mixin>
@@ -23,10 +71,10 @@
         <img id="moon_diff" src="../assets/moon/moon_01_diff_1k.png" alt="">
         <img id="moon_normal" src="../assets/moon/moon_01_nor_gl_1k.png" alt="">
         <img id="moon_ao" src="../assets/moon/moon_01_ao_1k.png" alt="">-->
-        <img id="garage_floor_rough" src="../assets/garagefloor/garage_floor_rough_4k.png" alt="">
-        <img id="garage_floor_diff" src="../assets/garagefloor/garage_floor_diff_4k.png" alt="">
-        <img id="garage_floor_normal" src="../assets/garagefloor/garage_floor_nor_gl_4k.png" alt="">
-        <img id="garage_floor_ao" src="../assets/garagefloor/garage_floor_ao_4k.png" alt="">
+        <img id="garage_floor_rough" src="../assets/garagefloor/garage_floor_rough_4k.jpg" alt="">
+        <img id="garage_floor_diff" src="../assets/garagefloor/garage_floor_diff_4k.jpg" alt="">
+        <img id="garage_floor_normal" src="../assets/garagefloor/garage_floor_nor_gl_4k.jpg" alt="">
+        <img id="garage_floor_ao" src="../assets/garagefloor/garage_floor_ao_4k.jpg" alt="">
         <img id="aerial_beach_rough" src="../assets/beach/aerial_beach_01_rough_4k.jpg" alt="">
         <img id="aerial_beach_diff" src="../assets/beach/aerial_beach_01_diff_4k.jpg" alt="">
         <img id="aerial_beach_normal" src="../assets/beach/aerial_beach_01_nor_gl_4k.jpg" alt="">
@@ -39,13 +87,13 @@
         <img id="Checker1" src="../assets/checkertext.png" alt="">
         <a-asset-item id="palm" src="../assets/models/palmtree/scene.gltf"></a-asset-item>
         <a-asset-item id="shelf" src="../assets/models/bookshelf/Wooden_Bookshelf_vmhndfu_Low.gltf"></a-asset-item>
-        <video id="skate" autoplay loop="true" src="../assets/Skasamplerv2Mute.mp4"></video>
+        <video id="skate" loop="true" src="../assets/Skasamplerv2Mute.mp4" preload="auto"></video>
         <img id="history1" src="../assets/history/SkaHistory-01.png"></img>
         <img id="history2" src="../assets/history/SkaHistory-02.png"></img>
         <img id="history3" src="../assets/history/SkaHistory-03.png"></img>
         <img id="history4" src="../assets/history/SkaHistory-04.png"></img>
         <img id="history5" src="../assets/history/SkaHistory-05.png"></img>
-        <audio id="#skasample" src="../assets/SkaSamplerV2Audio.mp3" preload="auto"></audio>
+        <audio id="skasample" src="../assets/SkaSamplerV2Audio.mp3" preload="auto"></audio>
     </a-assets>
     <a-entity id="player" position="15 1.6 0" rotation="0 90 0">
             <!-- camera -->
@@ -125,8 +173,8 @@
     <a-entity position="2.95611 1.65473 -9.51481" geometry="height: 0.16; width: 12" material="color: white"></a-entity>
     <a-entity position="2.95611 2.23009 -9.51481" geometry="height: 0.16; width: 12" material="color: white;"></a-entity>
 
-    <a-entity position="-6.66474 0.54196 -7.59551" geometry="height: 0.24; width: 8.61" material="color: white" rotation="0 47.419 0"></a-entity>
-    <a-entity position="-6.66474 1.07517 -7.59551" geometry="height: 0.24; width: 8.61" material="color: white" rotation="0 47.419 0"></a-entity>
+<a-entity position="-6.66474 0.36022 -7.59551" geometry="height: 0.24; width: 8.61" material="color: white" rotation="0 47.419 0"></a-entity>
+<a-entity position="-6.66474 1.07517 -7.59551" geometry="height: 0.24; width: 8.61" material="color: white" rotation="0 47.419 0"></a-entity>
 
     <!--<a-gltf-model src="#shelf" position="3.3766 1.26808 -9.98294" gltf-model="../assets/models/bookshelf/Wooden_Bookshelf_vmhndfu_Low.gltf" scale="12 2 2"></a-gltf-model>
     <a-gltf-model src="#shelf" position="-6.87283 0.20224 -7.80027" gltf-model="../assets/models/bookshelf/Wooden_Bookshelf_vmhndfu_Low.gltf" scale="4.94 2 2" rotation="0 47.419 0"></a-gltf-model>-->
@@ -140,7 +188,8 @@
     <a-entity position="-8.77495 3.7624 -0.2623" geometry="depth: 0.677; height: 0.6773; width: 0.677" material="color: black" scale="0 8 12.2"></a-entity>
     <a-video src="#skate" position="-8.76338 3.43819 -0.27984" rotation="0 90 0" scale="8 4.5 1" material="shader: standard"></a-video>
     <a-light type="spot" intensity="5" position="-0.54719 5.78654 2.76107" color="#ffedd6" light="angle: 31.21; decay: 0.38; intensity: 3.5; penumbra: 1" rotation="-15.589608647714568 71.0805711061348 -149.40562057390372"></a-light>    
-    <a-sound src="src: url:(../assets/SkaSamplerAudio.mp3)" autoplay="true" position="-8.77495 3.7624 -0.2623"></a-sound>
+    <!--<a-entity sound="src: #skasample; autoplay: true; loop: true;" position= "-8.77495 3.7624 -0.2623"></a-entity>-->
+    <a-sound id="Ska_Sample" src="#skasample" position= "-8.77495 3.7624 -0.2623" sound="autoplay: false; loop: true; volume: 1; maxDistance: 12"></a-sound>
 
     <!--Decorations-->
     <a-image position="8 2.560 9.91126" material="src: #history1; flatShading: true; shader: standard;"  rotation="0 180 0" scale="2 2 0"></a-image>
@@ -156,8 +205,64 @@
     <a-gltf-model src="#SkaManModel" position="-4.79998 1.41636 -9.68948" rotation="0 7.48 0" scale="0.005 0.005 0.005" gltf-model="../assets/Skaman.glb"></a-gltf-model>
     <a-gltf-model src="#SkaManModel" position="-5.05301 1.41636 -9.50859" rotation="0 7.48 0" scale="0.005 0.005 0.005" gltf-model="../assets/Skaman.glb"></a-gltf-model>
     <a-gltf-model src="#SkaManModel" position="-5.29907 1.41636 -9.24565" rotation="0 7.48 0" scale="0.005 0.005 0.005" gltf-model="../assets/Skaman.glb"></a-gltf-model>
-    <a-gltf-model src="#SkaManModel" position="-5.29907 1.41636 -9.14565" rotation="0 7.48 0" scale="0.005 0.005 0.005" gltf-model="../assets/Skaman.glb"></a-gltf-model>
+    <a-gltf-model src="#SkaManModel" position="-5.52756 1.41488 -8.94078" rotation="0 7.48 0" scale="0.005 0.005 0.005" gltf-model="../assets/Skaman.glb"></a-gltf-model>
+    <a-gltf-model src="#SkaManModel" position="-5.76035 1.41488 -8.69409" rotation="0 7.48 0" scale="0.005 0.005 0.005" gltf-model="../assets/Skaman.glb"></a-gltf-model>
+    <a-gltf-model src="#SkaManModel" position="-6.04395 1.41488 -8.45257" rotation="0 7.48 0" scale="0.005 0.005 0.005" gltf-model="../assets/Skaman.glb"></a-gltf-model>
+    <a-gltf-model src="#SkaManModel" position="-6.29745 1.41488 -8.16468" rotation="0 7.48 0" scale="0.005 0.005 0.005" gltf-model="../assets/Skaman.glb"></a-gltf-model>
+    <a-gltf-model src="#SkaManModel" position="-6.50614 1.42673 -7.84774" rotation="0 7.48 0" scale="0.005 0.005 0.005" gltf-model="../assets/Skaman.glb"></a-gltf-model>
+    <a-gltf-model src="#SkaManModel" position="-6.77683 1.41488 -7.49836" rotation="0 7.48 0" scale="0.005 0.005 0.005" gltf-model="../assets/Skaman.glb"></a-gltf-model>
+    <a-gltf-model src="#SkaManModel" position="-6.98091 1.41488 -7.24323" rotation="0 7.48 0" scale="0.005 0.005 0.005" gltf-model="../assets/Skaman.glb"></a-gltf-model>
+    <a-gltf-model src="#SkaManModel" position="-7.2242 1.41488 -6.97796" rotation="0 7.48 0" scale="0.005 0.005 0.005" gltf-model="../assets/Skaman.glb"></a-gltf-model>
+    <a-gltf-model src="#SkaManModel" position="-7.44017 1.41488 -6.73659" rotation="0 7.48 0" scale="0.005 0.005 0.005" gltf-model="../assets/Skaman.glb"></a-gltf-model>
+    <a-gltf-model src="#SkaManModel" position="-7.67973 1.41488 -6.47278" rotation="0 7.48 0" scale="0.005 0.005 0.005" gltf-model="../assets/Skaman.glb"></a-gltf-model>
+    <a-gltf-model src="#SkaManModel" position="-8.0147 1.41488 -6.20826" rotation="0 7.48 0" scale="0.005 0.005 0.005" gltf-model="../assets/Skaman.glb"></a-gltf-model>
+    <a-gltf-model src="#SkaManModel" position="-8.25559 1.41488 -5.94496" rotation="0 7.48 0" scale="0.005 0.005 0.005" gltf-model="../assets/Skaman.glb"></a-gltf-model>
+    <a-gltf-model src="#SkaManModel" position="-8.51624 1.41488 -5.66398" rotation="0 7.48 0" scale="0.005 0.005 0.005" gltf-model="../assets/Skaman.glb"></a-gltf-model>
+
+    <a-gltf-model src="#SkaManModel" position="-4.79998 0.691 -9.68948" rotation="0 7.48 0" scale="0.005 0.005 0.005" gltf-model="../assets/Skaman.glb"></a-gltf-model>
+    <a-gltf-model src="#SkaManModel" position="-5.05301 0.691 -9.50859" rotation="0 7.48 0" scale="0.005 0.005 0.005" gltf-model="../assets/Skaman.glb"></a-gltf-model>
+    <a-gltf-model src="#SkaManModel" position="-5.29907 0.691 -9.24565" rotation="0 7.48 0" scale="0.005 0.005 0.005" gltf-model="../assets/Skaman.glb"></a-gltf-model>
+    <a-gltf-model src="#SkaManModel" position="-5.52756 0.691 -8.94078" rotation="0 7.48 0" scale="0.005 0.005 0.005" gltf-model="../assets/Skaman.glb"></a-gltf-model>
+    <a-gltf-model src="#SkaManModel" position="-5.76035 0.691 -8.69409" rotation="0 7.48 0" scale="0.005 0.005 0.005" gltf-model="../assets/Skaman.glb"></a-gltf-model>
+    <a-gltf-model src="#SkaManModel" position="-6.04395 0.691 -8.45257" rotation="0 7.48 0" scale="0.005 0.005 0.005" gltf-model="../assets/Skaman.glb"></a-gltf-model>
+    <a-gltf-model src="#SkaManModel" position="-6.29745 0.691 -8.16468" rotation="0 7.48 0" scale="0.005 0.005 0.005" gltf-model="../assets/Skaman.glb"></a-gltf-model>
+    <a-gltf-model src="#SkaManModel" position="-6.50614 0.691 -7.84774" rotation="0 7.48 0" scale="0.005 0.005 0.005" gltf-model="../assets/Skaman.glb"></a-gltf-model>
+    <a-gltf-model src="#SkaManModel" position="-6.77683 0.691 -7.49836" rotation="0 7.48 0" scale="0.005 0.005 0.005" gltf-model="../assets/Skaman.glb"></a-gltf-model>
+    <a-gltf-model src="#SkaManModel" position="-6.98091 0.691 -7.24323" rotation="0 7.48 0" scale="0.005 0.005 0.005" gltf-model="../assets/Skaman.glb"></a-gltf-model>
+    <a-gltf-model src="#SkaManModel" position="-7.2242 0.691 -6.97796" rotation="0 7.48 0" scale="0.005 0.005 0.005" gltf-model="../assets/Skaman.glb"></a-gltf-model>
+    <a-gltf-model src="#SkaManModel" position="-7.44017 0.691 -6.73659" rotation="0 7.48 0" scale="0.005 0.005 0.005" gltf-model="../assets/Skaman.glb"></a-gltf-model>
+    <a-gltf-model src="#SkaManModel" position="-7.67973 10.691 -6.47278" rotation="0 7.48 0" scale="0.005 0.005 0.005" gltf-model="../assets/Skaman.glb"></a-gltf-model>
+    <a-gltf-model src="#SkaManModel" position="-8.0147 0.691 -6.20826" rotation="0 7.48 0" scale="0.005 0.005 0.005" gltf-model="../assets/Skaman.glb"></a-gltf-model>
+    <a-gltf-model src="#SkaManModel" position="-8.25559 0.691 -5.94496" rotation="0 7.48 0" scale="0.005 0.005 0.005" gltf-model="../assets/Skaman.glb"></a-gltf-model>
+    <a-gltf-model src="#SkaManModel" position="-8.51624 0.691 -5.66398" rotation="0 7.48 0" scale="0.005 0.005 0.005" gltf-model="../assets/Skaman.glb"></a-gltf-model>
+    <a-gltf-model src="#SkaManModel" position="-7.74517 0.691 -6.53629" rotation="0 7.48 0" scale="0.005 0.005 0.005" gltf-model="../assets/Skaman.glb"></a-gltf-model>
+
 </a-entity>
+
+<script>
+    const startButton = document.querySelector('#startButton');
+    const startOverlay = document.querySelector('#startOverlay');
+
+    startButton.addEventListener('click', () => {
+      const sounds = document.querySelectorAll('a-sound');
+      const videoAsset = document.querySelector('#skate');
+
+      sounds.forEach((el) => {
+        if (el.components.sound) {
+          el.components.sound.playSound();
+        }
+      });
+
+      if (videoAsset) {
+        videoAsset.setAttribute('autoplay', 'true');
+        videoAsset.play().catch((err) => {
+          console.warn('Unable to play video:', err);
+        });
+      }
+
+      startOverlay.classList.add('hidden');
+    });
+  </script>
 </a-scene>
 </body>
 </html>
