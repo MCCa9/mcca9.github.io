@@ -18,7 +18,7 @@
     #startOverlay {
       position: fixed;
       inset: 0;
-      background: rgba(179, 27, 27, 0.92);
+      background: rgba(97, 5, 140, 0.92);
       color: white;
       display: flex;
       flex-direction: column;
@@ -55,12 +55,14 @@
 </head>
 <body>
 <div id="startOverlay">
-    <h1>Welcome To The Ska Snacks Store</h1>
-    <p>Click below to start the experience and enable sound. Please wait about 15 seconds before pressing the button.</p>
+    <h1>The Ska Snacks Store</h1>
+    <p>Click below to start the experience and enable sound.</p>
+    <p>Note: Please wait about 30 seconds for all the assets to load before pressing start, this will ensure the best possible experience.</p>
     <button id="startButton">Start Experience</button>
 </div>
     <a-scene background="color: #FAFAFA">
        <a-assets>
+        <audio id="skasample" src="../assets/SkaSamplerV2Audio.mp3" preload="auto"></audio>
         <a-mixin id="wall" geometry="primitive:box; width: 15; height: 6; depth: 0.3;"></a-mixin>
         <a-mixin id="floor" geometry="primitive: box; width:35; height: 0.2; depth: 20;"></a-mixin>.    
         <a-mixin id="pillar"></a-mixin>
@@ -71,7 +73,6 @@
         <img id="moon_diff" src="../assets/moon/moon_01_diff_1k.png" alt="">
         <img id="moon_normal" src="../assets/moon/moon_01_nor_gl_1k.png" alt="">
         <img id="moon_ao" src="../assets/moon/moon_01_ao_1k.png" alt="">-->
-        <audio id="skasample" src="../assets/SkaSamplerV2Audio.mp3" preload="auto"></audio>
         <img id="garage_floor_rough" src="../assets/garagefloor/garage_floor_rough_4k.jpg" alt="">
         <img id="garage_floor_diff" src="../assets/garagefloor/garage_floor_diff_4k.jpg" alt="">
         <img id="garage_floor_normal" src="../assets/garagefloor/garage_floor_nor_gl_4k.jpg" alt="">
@@ -86,6 +87,7 @@
         <img id="SkaMan" src="../assets/SkaMan.png" alt="">
         <img id="note" src="../assets/Note.png" alt="">
         <img id="guitar" src="../assets/Guitarra.png" alt="">
+        <img id="playlist" src="../assets/Playlist.png" alt="">
         <a-asset-item id="SkaManModel" src="../assets/Skaman.glb"></a-asset-item>
         <img id="Checker1" src="../assets/checkertext.png" alt="">
         <a-asset-item id="palm" src="../assets/models/palmtree/scene.gltf"></a-asset-item>
@@ -99,6 +101,8 @@
         <a-asset-item id="guitar3d" src="../assets/models/guitar/gibsones_345.glb"></a-asset-item>
         <a-asset-item id="bugle" src="../assets/models/bugle/scene.gltf"></a-asset-item>
         <a-asset-item id="drumkit" src="../assets/models/drumkit/scene.gltf"></a-asset-item>
+        <a-asset-item id="cash" src="../assets/models/cash/scene.gltf"></a-asset-item>
+
     </a-assets>
     <a-entity id="player" position="15 1.6 0" rotation="0 90 0">
             <!-- camera -->
@@ -148,6 +152,14 @@
     <a-image src="../assets/SkaMan.png" material="flatShading: true; shader: standard;" position="9.87496 2.87469 3.19776" rotation="0 -90 0" scale="2.5 3.6 1"></a-image>
     <a-image src="../assets/SkaMan.png" material="flatShading: true; shader: standard;"position="9.87496 2.87469 8.825" rotation="0 90 0" scale="2.5 3.6 1"></a-image>
     <a-image src="../assets/SkaMan.png" material="flatShading: true; shader: standard; src: #logo" position="9.80077 3.05237 6.02798" rotation="0 -90 0" scale="3.94 3.08 1"></a-image>
+    <a-gltf-model src="#cash" position="7.79127 1.02755 3.32605" rotation="0 90 0" scale="0.4 0.4 0.4" gltf-model="../assets/models/cash/scene.gltf"></a-gltf-model>
+    <a-gltf-model src="#cash" position="7.79127 1.02755 6.32605" rotation="0 90 0" scale="0.4 0.4 0.4" gltf-model="../assets/models/cash/scene.gltf"></a-gltf-model>
+<a-entity mixin="primary" geometry="primitive: cylinder; height: 1.29; radius: 0.12" position="5.80831 0.65271 6.04087"></a-entity>
+<a-entity mixin="primary" geometry="primitive: cylinder; height: 1.29; radius: 0.12" position="5.80831 0.65271 2.92343"></a-entity>
+<a-entity mixin="primary" geometry="primitive: cylinder; height: 1.29; radius: 0.12" position="3.5257 0.65271 2.92343"></a-entity>
+<a-entity mixin="primary" geometry="primitive: cylinder; height: 1.29; radius: 0.12" position="3.526 0.65271 6.04087"></a-entity>
+<a-entity mixin="primary" geometry="height: 0.26; depth: 0.07; width: 4.86" position="5.90672 0.94088 2.92343"></a-entity>
+<a-entity mixin="primary" geometry="depth: 0.07; height: 0.26; width: 4.86" position="5.90672 0.94088 6.03908"></a-entity>
 
     <!--candy dispenser-->
     <a-entity geometry="primitive: cylinder; height: 7.41; radius: 0.24" position="-3.5 5.02218 9.78552" material="color: red; repeat: 2.57 7.81; normalMap: #cobble_normal; normalTextureRepeat: 2.57 7.81; src: #cobble_diff"></a-entity>
@@ -190,11 +202,13 @@
     <a-entity mixin="primary" geometry="height: 2.31; width: 5.75" position="-0.83248 0.80323 0.25672"></a-entity>
 
     <!--screen-->
-    <a-entity position="-8.77495 3.7624 -0.2623" geometry="depth: 0.677; height: 0.6773; width: 0.677" material="color: black" scale="0 8 12.2"></a-entity>
-    <a-video src="#skate" position="-8.76338 3.43819 -0.27984" rotation="0 90 0" scale="8 4.5 1" material="shader: standard"></a-video>
-    <a-light type="spot" intensity="5" position="-0.54719 5.78654 2.76107" color="#ffedd6" light="angle: 31.21; decay: 0.38; intensity: 3.5; penumbra: 1" rotation="-15.589608647714568 71.0805711061348 -149.40562057390372"></a-light>    
+    <!--<a-entity position="-8.77495 3.7624 -0.2623" geometry="depth: 0.677; height: 0.6773; width: 0.677" material="color: black" scale="0 8 12.2"></a-entity>-->
+    <a-entity position="-8.82029 4.49459 -0.2623" geometry="depth: 0.557; height: 0.557; width: 0.677" material="color: black" scale="0 8 12.2"></a-entity>
+    <!--<a-video src="#skate" position="-8.76338 3.43819 -0.27984" rotation="0 90 0" scale="8 4.5 1" material="shader: standard"></a-video>-->
+    <a-video src="#skate" position="-8.77864 4.07741 -0.27984" rotation="0 90 0" scale="6 3.26 1" material="shader: standard"></a-video>    <a-light type="spot" intensity="5" position="-0.54719 5.78654 2.76107" color="#ffedd6" light="angle: 31.21; decay: 0.38; intensity: 3.5; penumbra: 1" rotation="-15.589608647714568 71.0805711061348 -149.40562057390372"></a-light>    
     <!--<a-entity sound="src: #skasample; autoplay: true; loop: true;" position= "-8.77495 3.7624 -0.2623"></a-entity>-->
-    <a-sound id="Ska_Sample" src="#skasample" position= "-8.77495 3.7624 -0.2623" sound="autoplay: false; loop: true; volume: 1; maxDistance: 12"></a-sound>
+    <a-sound id="Ska_Sample" src="#skasample" position= "-8.77495 3.7624 -0.2623" sound="autoplay: false; loop: true; volume: 2; maxDistance: 200"></a-sound>
+    <a-image position="-8.74877 1.50954 -0.43429" material="flatShading: true; shader: standard; src: #playlist" rotation="0 90 0" scale="2.5 1.5 0"></a-image>
 
     <!--Decorations-->
     <a-image position="8 2.560 9.91126" material="src: #history1; flatShading: true; shader: standard;"  rotation="0 180 0" scale="2 2 0"></a-image>
@@ -244,7 +258,9 @@
    
     <a-gltf-model src="#bugle" position="-2.74444 2.17437 0.3687" rotation="0 -155.2062452918082 0" gltf-model="../assets/models/bugle/scene.gltf" scale="3 3 3"></a-gltf-model>
     <a-gltf-model src="#guitar3d" position="-0.9413 2.6259 0.1733" rotation="-27.79017193723032 157.06262854803205 -4.835190833109017" scale="2 2 2" gltf-model="../assets/models/guitar/gibsones_345.glb"></a-gltf-model>
-    
+    <a-gltf-model src="#drumkit" position="0.97478 1.91511 0.24483" rotation="0 90 0" scale="0.75 0.75 0.75" gltf-model="../assets/models/drumkit/scene.gltf"></a-gltf-model>
+    <a-entity mixin="primary" geometry="primitive: cylinder; height: 1.29; radius: 0.04" position="-0.99878 2.07404 0.26598"></a-entity>
+    <a-entity mixin="primary" geometry="primitive: cylinder; height: 1.29; radius: 0.04" position="-2.68981 1.74558 0.35485"></a-entity>
 
 </a-entity>
 
